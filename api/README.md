@@ -75,3 +75,4 @@ Nest is [MIT licensed](LICENSE).
 
 TODOS: 
 Add category CRUD (paid)
+Injectable classes need to be inside the provider ( things that can be userd as depencdencies for orther classes) injectable: services and repositories 
