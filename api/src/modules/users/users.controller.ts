@@ -9,6 +9,7 @@ import {
   Req,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { ActiveUserId } from 'src/shared/decorators/ActiveUserId';
 // import { CreateUserDto } from './dto/create-user.dto';
 // import { UpdateUserDto } from './dto/update-user.dto';
 
@@ -17,8 +18,8 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get('me')
-  me(@Req() request: Request) {
-    return this.usersService.getUserById(request[userId]);
+  me(@ActiveUserId() userId: string) {
+    return this.usersService.getUserById(userId);
   }
 
   @Get()
